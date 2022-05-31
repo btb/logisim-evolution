@@ -390,7 +390,7 @@ public abstract class AbstractTtlGate extends InstanceFactory {
             painter,
             x
                 + (i < this.numberOfGatesToDraw / 2 ? i : i - this.numberOfGatesToDraw / 2)
-                    * ((width - 20) / (this.numberOfGatesToDraw / 2))
+                    * Math.floorDiv((width - 20) / (this.numberOfGatesToDraw / 2), 10) * 10
                 + (i < this.numberOfGatesToDraw / 2 ? 0 : 20),
             y,
             height,
