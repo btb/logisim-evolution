@@ -44,17 +44,17 @@ The carry from the half adder is not connected into the full adder.</p>
 2-bit adder as a subcircuit. We could execute this circuit directly to get
 the desired output for a perfect solution.</p>
 
-<blockquote><tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table</tt></blockquote>
+<blockquote><tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table</tt></blockquote>
 
 <p>But we want to execute the circuit using <tt>adder-query.circ</tt>
 rather than <tt>adder-master.circ</tt> as the loaded library.
 The naive approach would be to open Logisim and load that library instead;
 or you might simply remove the <tt>adder-master.circ</tt> file and rename
 <tt>adder-query.circ</tt> to be named <tt>adder-master.circ</tt> instead.
-But Logisim includes a handy <q><tt>-sub</tt></q> option that temporarily replace
+But Logisim includes a handy <q><tt>--substitute</tt></q> option that temporarily replace
 one file by another during that session — without making any changes on disk.</p>
 
-<blockquote><tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table&nbsp;-sub&nbsp;adder-master.circ&nbsp;adder-query.circ</tt></blockquote>
+<blockquote><tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table&nbsp;--substitute&nbsp;adder-master.circ&nbsp;adder-query.circ</tt></blockquote>
 
 <p>The output you would see from this is shown below; it is of course different
 from what we saw in <a href="index.html">the previous section</a> since now it is

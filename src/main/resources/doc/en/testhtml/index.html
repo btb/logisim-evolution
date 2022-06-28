@@ -129,10 +129,10 @@
         <samp>samp C:\SP\BIN\NSGMLSU.EXE:test.html:4:7:E: element "FOOBAR" undefined samp</samp> fin samp kljasd flaskjdalskjd hf<br>
       </p>
       <pre><code>
-RUN_TEST="java -jar logisim-filename.jar adder-test.circ -tty table"<br>${RUN_TEST} &gt; output-master.txt
+RUN_TEST="java -jar logisim-filename.jar adder-test.circ --tty table"<br>${RUN_TEST} &gt; output-master.txt
 for QUERY_FILE in adder-query*.circ
 do
-  if ${RUN_TEST} -sub adder-master.circ ${QUERY_FILE} | cmp -s output-master.txt
+  if ${RUN_TEST} --substitute adder-master.circ ${QUERY_FILE} | cmp -s output-master.txt
   then
     echo "${QUERY_FILE} OK"
   else

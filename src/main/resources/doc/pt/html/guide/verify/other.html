@@ -17,7 +17,7 @@
 <p> Existem algumas opções adicionais relacionadas com a execução pela linha de comandos. 
 </p>
 
-<h2> O parâmetro <tt> -load </tt> na linha de comando </h2>
+<h2> O parâmetro <tt> --load </tt> na linha de comando </h2>
 
 <p> Um circuito mais complexo poderá incluir um componente de memória RAM que precisará
 ser carregado com um programa para que o circuito possa usá-lo.
@@ -27,11 +27,11 @@ que será carregado em qualquer componente de RAM no circuito antes da simulaç�
 execução de linha de comando.)
 </p>
 
-<blockquote><tt>java -jar logisim-filename.jar cpu.circ -tty table -load mem-image.txt</tt></blockquote>
+<blockquote><tt>java -jar logisim-filename.jar cpu.circ --tty table --load mem-image.txt</tt></blockquote>
 
 <p> A ordem dos parâmetros não é importante (exceto para o parâmetro <tt> table </tt>
-que deverá ser imediatamente após <tt>-tty </tt>, e o nome do arquivo de imagem da 
-memória que deverá ser logo após <tt>-load </tt>).
+que deverá ser imediatamente após <tt>--tty </tt>, e o nome do arquivo de imagem da 
+memória que deverá ser logo após <tt>--load </tt>).
 O arquivo de imagem deverá estar no <a href="../mem/mem-menu.html"> formato de imagem da
 memória do Logisim </a>. 
 </p>
@@ -42,13 +42,13 @@ Não há maneira alguma, no entanto, de distinguir diferentes componentes do tip
 o Logisim irá tentar carregar o mesmo arquivo em todas as RAMs que puder encontrar.
 </p>
 
-<h2> Opções para o parâmetro <tt>-tty </tt> </h2>
+<h2> Opções para o parâmetro <tt>--tty </tt> </h2>
 
-<p> Em nossos exemplos até agora, sempre usamos tabela <q><tt>-tty&nbsp;table</tt></q>
+<p> Em nossos exemplos até agora, sempre usamos tabela <q><tt>--tty&nbsp;table</tt></q>
 para indicar que uma tabela de valores de saída deverá ser exibida. Você poderá
 personalizar o comportamento de outras formas, listando uma ou mais opções,
 separados por vírgulas. Por exemplo, você poderá escrever
-<q><tt>-tty&nbsp;table,halt,speed</tt></q>,
+<q><tt>--tty&nbsp;table,halt,speed</tt></q>,
 e o programa irá executar todas os três comportamentos listados abaixo.
 (A ordem em que estão listados não importa.) 
 </p>
@@ -62,7 +62,7 @@ serão exibidas em qualquer caso.
 </p> </dd>
 
 <dt> <tt> speed </tt> </dt>
-<dd> <p> Se você usar essa opção em conjunto com <q> <tt>-tty </tt> </q>,
+<dd> <p> Se você usar essa opção em conjunto com <q> <tt>--tty </tt> </q>,
 em seguida, depois que completar a simulação o Logisim irá exibir um resumo de
 quão rápido o circuito foi simulado, tal como:
 </p>

@@ -29,11 +29,11 @@
 		<th width="60">XNOR</th>
 		<th width="50">Odd<br>Parity</th>
 		<th width="50">Even<br>Parity</th></tr>
-	<tr><th valign="middle" height="65" align="left">Shaped:</th>
+	<tr><th valign="middle" height="65" align="left">ANSI</th>
 	    <td rowspan="3" colspan="4">
 	       <img src="../../../../img-libs/xor.png" width="295" height="113">
 	    </td></tr>
-	<tr><th valign="middle" height="65" align="left">Rectangular:</th></tr>
+	<tr><th valign="middle" height="65" align="left">IEC</th></tr>
 	</table></td></tr>
 </table></p>
 
@@ -94,7 +94,7 @@ the same wire) or floating, then the output will be the error value.</p>
 <p>The multi-bit versions of each gate will perform its one-bit
 transformation bitwise on its inputs.</p>
 
-<p><strong>Note:</strong> Many authorities contend that the shaped XOR
+<p><strong>Note:</strong> Many authorities contend that the ANSI XOR
 gate's behavior should correspond to the odd parity gate, but there is
 not agreement on this point.  Logisim's default behavior for XOR gates is based
 on the IEEE 91 standard. It is also consistent with the intuitive
@@ -113,7 +113,7 @@ to use parity by changing its <q>Multiple-Input Behavior</q> attribute.</p>
 <dd><p>The inputs into the component. There will be as many of these as
 specified in the Number of Inputs attribute.</p>
 
-<p>Note that if you are using shaped gates, the west side of XOR and
+<p>Note that if you are using ANSI gates, the west side of XOR and
 XNOR gates will be curved. Nonetheless, the input pins are in a line.
 Logisim will draw short stubs illustrating this; and if you overshoot a
 stub, it will silently assume that you did not mean to overshoot it. In

@@ -22,7 +22,7 @@
         Die allgemeine Befehlszeilensyntax lautet wie folgt.
       </p>
       <blockquote>
-        <pre>java -jar <i><b>jarFileName</b></i> <i>[options]</i> <i>[filenames]</i>
+        <pre>java -jar <i><b>jarFileName</b></i> [<i>options</i>] [<i>filenames</i>]
 </pre>
       </blockquote>
       <p>
@@ -32,7 +32,7 @@
         Das folgende Beispiel startet Logisim in seiner Grundkonfiguration.
       </p>
       <blockquote>
-        <pre>java -jar <i><b>jarFileName</b> <b> -plain -gates shaped -locale en</b></i>
+        <pre>java -jar <i><b>jarFileName</b></i> <b> --user-template plain --gates ANSI --locale en</b>
 </pre>
       </blockquote>
       <p>
@@ -40,13 +40,7 @@
       </p>
       <dl>
         <dt>
-          <tt>-plain</tt>
-        </dt>
-        <dt>
-          <tt>-empty</tt>
-        </dt>
-        <dt>
-          <tt>-template <b><i>templateFile</i></b></tt>
+          <tt>--user-template empty [<b>plain</b>|<b>empty</b>|<b><i>templateFile</i></b>]</tt>
         </dt>
         <dd>
           <p>
@@ -54,7 +48,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-gates <i>[<b>shaped</b>|<b>rectangular</b>]</i></tt>
+          <tt>--gates [<b>ANSI</b>|<b>IEC</b>]</tt>
         </dt>
         <dd>
           <p>
@@ -62,7 +56,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-locale <i><b>localeIdentifier</b></i></tt>
+          <tt>--locale <i><b>localeIdentifier</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -119,15 +113,7 @@
           </table>
         </dd>
         <dt>
-          <tt>-accents <i>[<b>yes</b>|<b>no</b>]</i></tt>
-        </dt>
-        <dd>
-          <p>
-            Dies ist nur für Sprachen relevant, die Zeichen außerhalb des 7-Bit-ASCII-Zeichensatzes verwenden; dazu gehören auch Sprachen, die Akzentzeichen verwenden, und nicht Englisch. Wenn <i>nein</i>, werden Zeichen außerhalb des 7-Bit-ASCII-Zeichensatzes durch Äquivalente ersetzt, die der Sprache entsprechen; dies wäre für Java/OS-Kombinationen nützlich, bei denen solche Zeichen nicht gut unterstützt werden.
-          </p>
-        </dd>
-        <dt>
-          <tt>-clearprops</tt>
+          <tt>--clear-prefs</tt>
         </dt>
         <dd>
           <p>
@@ -135,7 +121,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-nosplash</tt>
+          <tt>--no-splash</tt>
         </dt>
         <dd>
           <p>
@@ -143,7 +129,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-help</tt>
+          <tt>--help</tt>
         </dt>
         <dd>
           <p>
@@ -151,7 +137,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-version</tt>
+          <tt>--version</tt>
         </dt>
         <dd>
           <p>
@@ -159,23 +145,15 @@
           </p>
         </dd>
         <dt>
-          <tt>-analyze</tt>
+          <tt>--load <i><b>filename</b></i></tt>
         </dt>
         <dd>
           <p>
-            Zeigt die Menüs der kombinatorischen Analyse an.
+            Ein Bild in den RAM laden (funktioniert nur mit --tty)
           </p>
         </dd>
         <dt>
-          <tt>-load <i><b>filename</b></i></tt>
-        </dt>
-        <dd>
-          <p>
-            Ein Bild in den RAM laden (funktioniert nur mit -tty)
-          </p>
-        </dd>
-        <dt>
-          <tt>-sub <i><b>file1</b> <b>file2</b></i></tt>
+          <tt>--substitute <i><b>file1</b> <b>file2</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -183,7 +161,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-tty</tt> [<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]
+          <tt>--tty</tt> [<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]
         </dt>
         <dd>
           <p>
@@ -191,7 +169,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-testvector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
+          <tt>--test-vector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -199,12 +177,12 @@
           </p>
         </dd>
         <dt>
-          <tt>-geom <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
+          <tt>--geometry <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
         </dt>
         <dd>
           <p>
             Öffnet Logisim mit einem Fenster, das nach den Parametern W (Breite) und H (Höhe) bemessen ist, oder mit der linken oberen Ecke, die nach den Parametern X,Y positioniert ist.<br>
-            Beispiel: -geom 600x400+100+100
+            Beispiel: --geometry 600x400+100+100
           </p>
         </dd>
       </dl>
@@ -213,23 +191,19 @@
       </h2>
       <dl>
         <dt>
-          <tt>-test-circuit <b>testCircuitPathInput</b></tt>
+          <tt>--test-circuit <i><b>testCircuitPathInput</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-testvector</tt>
+          <tt>--test-vector</tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-fpga-implementation <b>inputpath</b> <b>Circuitimapfile</b> <b>cicuitimpname</b> <b>cicuitimpboard</b></tt>
+          <tt>--test-fpga <i><b>inputpath</b></i> <i><b>Circuitimapfile</b></i> <i><b>cicuitimpname</b></i> <i><b>cicuitimpboard</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-circ-gen <b>testCircPathInput</b> <b>testCircPathOutput</b></tt>
-        </dt>
-        <dd></dd>
-        <dt>
-          <tt>-questa<i>[<b>yes</b>|<b>no</b>]</i></tt>
+          <tt>--new-file-format <i><b>testCircPathInput</b></i> <i><b>testCircPathOutput</b></i></tt>
         </dt>
         <dd></dd>
       </dl>

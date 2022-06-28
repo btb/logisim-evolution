@@ -39,10 +39,10 @@
       </p>
       <blockquote>
         <div class=forcode>
-          <tt>java -jar logisim-evolution.jar test.circ -tty table &gt; out-master.txt</tt>
+          <tt>java -jar logisim-evolution.jar test.circ --tty table &gt; out-master.txt</tt>
         </div>
         <div class=forcode>
-          <tt>java -jar logisim-evolution.jar test.circ -tty&nbsp;table -sub master.circ query.circ &gt; out-query.txt</tt>
+          <tt>java -jar logisim-evolution.jar test.circ --tty&nbsp;table --substitute master.circ query.circ &gt; out-query.txt</tt>
         </div>
       </blockquote>
       <p>
@@ -52,11 +52,11 @@
         Para processar vários arquivos de consulta, você poderá construir um programa simples como um <i>script shell</i> para percorrer cada um e comparar o resultado. Aqui está como eu faria isso no Linux com <b>bash</b>
       </p>
 	  <blockquote>
-        <tt>RUN_TEST="java -jar logisim-evolution.jar test.circ -tty table"<br>
+        <tt>RUN_TEST="java -jar logisim-evolution.jar test.circ --tty table"<br>
         ${RUN_TEST} &gt; out-master.txt<br>
         for QUERY_FILE in query*.circ<br>
         do<br>
-        &nbsp;&nbsp;if&nbsp;${RUN_TEST}&nbsp;-sub&nbsp;master.circ&nbsp;${QUERY_FILE}&nbsp;|&nbsp;cmp&nbsp;-s&nbsp;out-master.txt<br>
+        &nbsp;&nbsp;if&nbsp;${RUN_TEST}&nbsp;--substitute&nbsp;master.circ&nbsp;${QUERY_FILE}&nbsp;|&nbsp;cmp&nbsp;-s&nbsp;out-master.txt<br>
         &nbsp;&nbsp;then<br>
         &nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"${QUERY_FILE}&nbsp;OK"<br>
         &nbsp;&nbsp;else<br>

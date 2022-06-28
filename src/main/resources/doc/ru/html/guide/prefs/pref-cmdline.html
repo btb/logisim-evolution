@@ -33,7 +33,7 @@
         Следующий пример запускает Logisim в его базовой конфигурации.
       </p>
       <blockquote>
-        <pre>java -jar <i><b>имяJarФайла</b></i> <b>-plain -gates shaped -locale en</b>
+        <pre>java -jar <i><b>имяJarФайла</b></i> <b>--user-template plain --gates ANSI --locale en</b>
 </pre>
       </blockquote>
       <p>
@@ -41,13 +41,7 @@
       </p>
       <dl>
         <dt>
-          <tt>-plain</tt>
-        </dt>
-        <dt>
-          <tt>-empty</tt>
-        </dt>
-        <dt>
-          <tt>-template <b><em>файлШаблона</em></b></tt>
+          <tt>--user-template [<b>plain</b>|<b>empty</b>|<b><em>файлШаблона</em></b>]</tt>
         </dt>
         <dd>
           <p>
@@ -56,7 +50,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-gates <em>[<b>shaped</b>|<b>rectangular</b>]</em></tt>
+          <tt>--gates <em>[<b>ANSI</b>|<b>IEC</b>]</em></tt>
         </dt>
         <dd>
           <p>
@@ -64,7 +58,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-locale <em><b>идентификаторЯзыка</b></em></tt>
+          <tt>--locale <em><b>идентификаторЯзыка</b></em></tt>
         </dt>
         <dd>
           <p>
@@ -116,15 +110,7 @@
           </table>
         </dd>
         <dt>
-          <tt>-accents <em>[<b>yes</b>|<b>no</b>]</em></tt>
-        </dt>
-        <dd>
-          <p>
-            Это имеет смысл только для языков, которые используют символы вне 7-битного набора символов ASCII; сюда относятся языки, использующие специфичные символы; английский сюда не входит. При <em>no</em> символы вне 7-битного набора символов ASCII заменяются эквивалентами соответственно языку; это будет полезно для комбинаций Java/ОС, где такие символы не поддерживаются хорошо.
-          </p>
-        </dd>
-        <dt>
-          <tt>-clearprops</tt>
+          <tt>--clear-prefs</tt>
         </dt>
         <dd>
           <p>
@@ -132,7 +118,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-nosplash</tt>
+          <tt>--no-splash</tt>
         </dt>
         <dd>
           <p>
@@ -140,7 +126,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-help</tt>
+          <tt>--help</tt>
         </dt>
         <dd>
           <p>
@@ -148,7 +134,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-version</tt>
+          <tt>--version</tt>
         </dt>
         <dd>
           <p>
@@ -156,23 +142,15 @@
           </p>
         </dd>
         <dt>
-          <tt>-analyze</tt>
+          <tt>--load <i><b>filename</b></i></tt>
         </dt>
         <dd>
           <p>
-            Отображает меню комбинаторного анализа.
+            Загружает изображение в оперативную память (работает только с --tty). Дополнительная информация в <a href="../verify/other.html">Другие опции верификации</a>.
           </p>
         </dd>
         <dt>
-          <tt>-load <i><b>filename</b></i></tt>
-        </dt>
-        <dd>
-          <p>
-            Загружает изображение в оперативную память (работает только с -tty). Дополнительная информация в <a href="../verify/other.html">Другие опции верификации</a>.
-          </p>
-        </dd>
-        <dt>
-          <tt>-sub <i><b>file1</b> <b>file2</b></i></tt>
+          <tt>--substitute <i><b>file1</b> <b>file2</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -180,7 +158,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-tty</tt> <i>[<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]</i>
+          <tt>--tty</tt> <i>[<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]</i>
         </dt>
         <dd>
           <p>
@@ -188,13 +166,13 @@
           </p>
         </dd>
         <dt>
-          <tt>-testvector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
+          <tt>--test-vector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
         </dt>
         <dd>
           Выполняет тесты <b>имя_схемы</b> в <b>проектном профиле</b> в функции векторов в <b>векторном профиле</b>. Дополнительная информация в <a href="../verify/test.html">Test Vector Window</a>.
         </dd>
         <dt>
-          <tt>-geom <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
+          <tt>--geometry <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -208,20 +186,17 @@
       </h2>
       <dl>
         <dt>
-          <tt>-test-circuit <b>testCircuitPathInput</b></tt>
+          <tt>--test-circuit <i><b>testCircuitPathInput</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-fpga-implementation <b>inputpath</b> <b>Circuitimapfile</b> <b>cicuitimpname</b> <b>cicuitimpboard</b></tt>
+          <tt>--test-fpga <i><b>inputpath</b></i> <i><b>Circuitimapfile</b></i> <i><b>cicuitimpname</b></i> <i><b>cicuitimpboard</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-circ-gen <b>testCircPathInput</b> <b>testCircPathOutput</b></tt>
+          <tt>--new-file-format <i><b>testCircPathInput</b></i> <i><b>testCircPathOutput</b></i></tt>
         </dt>
         <dd></dd>
-        <dt>
-          <tt>-questa<em>[<b>yes</b>|<b>no</b>]</em></tt>
-        </dt>
       </dl>
       <p>
         <strong>Далее:</strong> <a href="../index.html">Руководство пользователя</a>.

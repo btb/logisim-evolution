@@ -33,10 +33,10 @@
         <img class="notscal" src="../../../../img-guide/verify-adder-test.png" alt="#########">
       </p>
       <p>
-        Após esse circuito ter sido construído, executaremos a linha de comando do Logisim, fornecendo o nome do projeto e a opção <b class=propertie>-tty</b> opção com o parâmetro <b class=propertie>table</b>.
+        Após esse circuito ter sido construído, executaremos a linha de comando do Logisim, fornecendo o nome do projeto e a opção <b class=propertie>--tty</b> opção com o parâmetro <b class=propertie>table</b>.
       </p>
       <blockquote>
-        <tt>java -jar logisim-filename.jar adder-test.circ -tty table</tt>
+        <tt>java -jar logisim-filename.jar adder-test.circ --tty table</tt>
       </blockquote>
       <p>
         Sem abrir qualquer janela, o Logisim carregará o circuito e começará a executá-lo, variando qualquer <i>clock</i> tão rápido quanto possível até concluir a propagação entre cada instante. Após cada propagação ter sido concluída, o Logisim carregará os valores atuais dos pinos de saída; caso tenham mudado na propagação anterior, os valores serão exibidos em formato delimitado por tabulações. Se houver um pino de saída marcado com a palavra especial <var>halt</var> (sensível ao caso), sua saída não será exibida - mas uma vez que o valor do pino chegue a 1, depois que uma propagação for concluída, o Logisim terminará a simulação.

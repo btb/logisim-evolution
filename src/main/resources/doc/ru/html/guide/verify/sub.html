@@ -49,14 +49,14 @@
         Мы сохраняем нашу проверяющую схему в отдельный файл <tt><b>test.circ</b></tt>. Затем мы загружаем <tt><b>adder-master.circ</b></tt> как библиотеку Logisim <b class=menu>|&nbsp;Проект&nbsp;|</b>→<b class=menu>|&nbsp; Загрузить библиотеку&nbsp;|</b>→ <b class=menu>|&nbsp;Библиотека Logisim…&nbsp;|</b>, и добавляем двухбитный сумматор оттуда как подсхему. Мы могли бы выполнить эту схему непосредственно, чтобы получить желаемый результат для идеального решения.
       </p>
       <blockquote>
-        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table</tt>
+        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table</tt>
       </blockquote>
       <p>
-        Но мы хотим выполнить схему, используя как загруженную библиотеку <tt><b>adder-query.circ</b></tt> вместо <tt><b>adder-master.circ</b></tt>. Наивным подходом будет открыть Logisim и загрузить эту библиотеку; или вы можете просто удалить файл <tt><b>adder-master.circ</b></tt> и переименовать <tt><b>adder-query.circ</b></tt> в <tt><b>adder-master.circ</b></tt> вместо него. Но Logisim включает удобный параметр <b class="porpertie">-sub</b>, который временно заменяет один файл другим в ходе этой сессии - без каких-либо изменений на диске.
+        Но мы хотим выполнить схему, используя как загруженную библиотеку <tt><b>adder-query.circ</b></tt> вместо <tt><b>adder-master.circ</b></tt>. Наивным подходом будет открыть Logisim и загрузить эту библиотеку; или вы можете просто удалить файл <tt><b>adder-master.circ</b></tt> и переименовать <tt><b>adder-query.circ</b></tt> в <tt><b>adder-master.circ</b></tt> вместо него. Но Logisim включает удобный параметр <b class="porpertie">--substitute</b>, который временно заменяет один файл другим в ходе этой сессии - без каких-либо изменений на диске.
       </p>
       <blockquote>
 	  	   <div class="forcode">
-        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table&nbsp;-sub&nbsp;adder-master.circ&nbsp;adder-query.circ</tt>
+        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table&nbsp;--substitute&nbsp;adder-master.circ&nbsp;adder-query.circ</tt>
 			</div>
       </blockquote>
 	  <p>

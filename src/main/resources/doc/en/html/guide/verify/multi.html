@@ -39,10 +39,10 @@
       </p>
       <blockquote>
          <div class=forcode>
-          <tt>java -jar logisim-evolution.jar test.circ -tty table &gt; out-master.txt</tt>
+          <tt>java -jar logisim-evolution.jar test.circ --tty table &gt; out-master.txt</tt>
         </div>
         <div class=forcode>
-          <tt>java -jar logisim-evolution.jar test.circ -tty&nbsp;table -sub master.circ query.circ &gt; out-query.txt</tt>
+          <tt>java -jar logisim-evolution.jar test.circ --tty&nbsp;table --substitute master.circ query.circ &gt; out-query.txt</tt>
         </div>
       </blockquote>
       <p>
@@ -52,11 +52,11 @@
         To process several query files, you would like want to build a simple program such as a shell script to iterate through each and comparing the output. Here is how I would do it under Linux's <b>bash</b>:
       </p>
       <blockquote>
-        <tt>RUN_TEST="java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table"<br>
+        <tt>RUN_TEST="java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table"<br>
         ${RUN_TEST}&nbsp;&gt;&nbsp;output-master.txt<br>
         for&nbsp;QUERY_FILE&nbsp;in&nbsp;query*.circ<br>
         do<br>
-        &nbsp;&nbsp;if&nbsp;${RUN_TEST}&nbsp;-sub&nbsp;^master.circ&nbsp;${QUERY_FILE}&nbsp;|&nbsp;cmp&nbsp;-s&nbsp;output-master.txt<br>
+        &nbsp;&nbsp;if&nbsp;${RUN_TEST}&nbsp;--substitute&nbsp;^master.circ&nbsp;${QUERY_FILE}&nbsp;|&nbsp;cmp&nbsp;-s&nbsp;output-master.txt<br>
         &nbsp;&nbsp;then<br>
         &nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"${QUERY_FILE}&nbsp;OK"<br>
         &nbsp;&nbsp;else<br>

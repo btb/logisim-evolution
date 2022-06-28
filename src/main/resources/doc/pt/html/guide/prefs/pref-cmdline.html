@@ -33,7 +33,7 @@
         O exemplo a seguir iniciará Logisim em sua configuração básica.
       </p>
       <blockquote>
-        <pre>java-jar <i><b>jarFileName</b> <b> -plain -gates shaped -locale en</b></i>
+        <pre>java-jar <i><b>jarFileName</b></i> <b> --user-template plain --gates ANSI --locale en</b>
 </pre>
       </blockquote>
       <p>
@@ -41,13 +41,7 @@
       </p>
       <dl>
         <dt>
-          <tt>-plain</tt>
-        </dt>
-        <dt>
-          <tt>-empty</tt>
-        </dt>
-        <dt>
-          <tt>-template <b><em>templateFile</em></b></tt>
+          <tt>--user-template [<b>plain</b>|<b>empty</b>|<b><i>templateFile</i></b>]</tt>
         </dt>
         <dd>
           <p>
@@ -55,7 +49,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-gates <i>[<b>shaped</b>|<b>rectangular</b>]</i></tt>
+          <tt>--gates [<b>ANSI</b>|<b>IEC</b>]</tt>
         </dt>
         <dd>
           <p>
@@ -64,7 +58,7 @@
         </dd>
         <dd></dd>
         <dt>
-          <tt>-locale <i><b>localeIdentifier</b></i></tt>
+          <tt>--locale <i><b>localeIdentifier</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -121,15 +115,7 @@
           </table>
         </dd>
         <dt>
-          <tt>-accents <i>[<b>yes</b>|<b>no</b>]</i></tt>
-        </dt>
-        <dd>
-          <p>
-            Esse é apenas relevante para as línguas que usam caracteres fora do conjunto de caracteres ASCII de 7 bits, o que inclui idiomas com caracteres acentuados, e não seria o caso do Inglês. Se <em>no</em>, os caracteres fora do conjunto de caracteres ASCII de 7 bits serão substituídos por equivalentes adequados à linguagem; isso seria útil para as combinações Java/SO onde esses caracteres também não forem disponíveis.
-          </p>
-        </dd>
-        <dt>
-          <tt>-clearprops</tt>
+          <tt>--clear-prefs</tt>
         </dt>
         <dd>
           <p>
@@ -137,7 +123,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-nosplash</tt>
+          <tt>--no-splash</tt>
         </dt>
         <dd>
           <p>
@@ -145,7 +131,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-help</tt>
+          <tt>--help</tt>
         </dt>
         <dd>
           <p>
@@ -153,7 +139,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-version</tt>
+          <tt>--version</tt>
         </dt>
         <dd>
           <p>
@@ -161,23 +147,15 @@
           </p>
         </dd>
         <dt>
-          <tt>-analyze</tt>
+          <tt>--load <i><b>filename</b></i></tt>
         </dt>
         <dd>
           <p>
-            Exibe os menus de análise combinatória.
+            Carrega uma imagem na RAM (só funciona com --tty). Mais informações em <a href="../verify/other.html">Outras opções de verificação</a>
           </p>
         </dd>
         <dt>
-          <tt>-load <i><b>filename</b></i></tt>
-        </dt>
-        <dd>
-          <p>
-            Carrega uma imagem na RAM (só funciona com -tty). Mais informações em <a href="../verify/other.html">Outras opções de verificação</a>
-          </p>
-        </dd>
-        <dt>
-          <tt>-sub <i><b>file1</b> <b>file2</b></i></tt>
+          <tt>--substitute <i><b>file1</b> <b>file2</b></i></tt>
         </dt>
         <dd>
           <p>
@@ -185,7 +163,7 @@
           </p>
         </dd>
         <dt>
-          <tt>-tty</tt> <i>[<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]</i>
+          <tt>--tty</tt> <i>[<b>table</b>|<b>speed</b>|<b>tty</b>|<b>halt</b>|<b>stats</b>]</i>
         </dt>
         <dd>
           <p>
@@ -193,18 +171,18 @@
           </p>
         </dd>
         <dt>
-          <tt>-testvector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
+          <tt>--test-vector <i><b>circuitname</b> <b>vectorfile</b> <b>projectfile</b></i></tt>
         </dt>
         <dd>
           Executa os testes de <b>circuitname</b> em <b>projectfile</b> em função dos vectores em <b>vectorfile</b>. Mais informações em <a href="../verify/test.html">Janela de Vetor de Teste</a>
         </dd>
         <dt>
-          <tt>-geom <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
+          <tt>--geometry <i><b>WxH</b>|<b>WxH+X+Y</b></i></tt>
         </dt>
         <dd>
           <p>
             Abre Logisim com uma janela dimensionada de acordo com os parâmetros W (largura) e H (altura) ou com o canto superior esquerdo posicionado de acordo com os parâmetros X,Y.<br>
-            Exemplo: -geom 600x400+100
+            Exemplo: --geometry 600x400+100
           </p>
         </dd>
       </dl>
@@ -213,19 +191,15 @@
       </h2>
       <dl>
         <dt>
-          <tt>-test-circuit <b>testCircuitPathInput</b></tt>
+          <tt>--test-circuit <i><b>testCircuitPathInput</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-fpga-implementation <b>inputpath</b> <b>Circuitimapfile</b> <b>cicuitimpname</b> <b>cicuitimpboard</b></tt>
+          <tt>--test-fpga <i><b>inputpath</b></i> <i><b>Circuitimapfile</b></i> <i><b>cicuitimpname</b></i> <i><b>cicuitimpboard</b></i></tt>
         </dt>
         <dd></dd>
         <dt>
-          <tt>-test-circ-gen <b>testCircPathInput</b> <b>testCircPathOutput</b></tt>
-        </dt>
-        <dd></dd>
-        <dt>
-          <tt>-questa<em>[<b>yes</b>|<b>no</b>]</em></tt>
+          <tt>--new-file-format <i><b>testCircPathInput</b></i> <i><b>testCircPathOutput</b></i></tt>
         </dt>
         <dd></dd>
       </dl>

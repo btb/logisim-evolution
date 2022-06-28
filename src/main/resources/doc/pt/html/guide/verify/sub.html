@@ -51,13 +51,13 @@
         Nós construíremos o nosso circuito de teste em um arquivo diferente. Lá, carregaremos <tt><b>adder-master.circ</b></tt> como uma biblioteca do Logisim <b class=menu>|&nbsp;Projeto&nbsp;|</b>→<b class=menu>|&nbsp;Carregar Biblioteca&nbsp;|</b>→ <b class=menu>|&nbsp;Biblioteca do Logisim ...&nbsp;|</b>, e inserir seu somador de 2 bits como um subcircuito. Nós poderíamos executar esse circuito diretamente para obter a saída desejada para uma solução perfeita.
       </p>
       <blockquote>
-        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table</tt>
+        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table</tt>
       </blockquote>
       <p>
-        Mas queremos executar o circuito usando <tt></b>adder-query.circ</b></tt> ao invés de <tt></b>adder-master.circ</b></tt> como o da biblioteca carregada. A abordagem ingênua seria abrir Logisim e carregar essa biblioteca de uma vez; ou você poderá simplesmente remover o <<tt></b>adder-master.circ</b></tt> e renomear <tt><b>adder-query.circ</b></tt> para ser chamado de <tt><b>adder-master.circ</b></tt> em vez disso. Mas Logisim inclui uma prática opção <b class=porpertie>-sub</b> que substituirá temporariamente um arquivo por outro durante a sessão - sem fazer quaisquer alterações em disco.
+        Mas queremos executar o circuito usando <tt></b>adder-query.circ</b></tt> ao invés de <tt></b>adder-master.circ</b></tt> como o da biblioteca carregada. A abordagem ingênua seria abrir Logisim e carregar essa biblioteca de uma vez; ou você poderá simplesmente remover o <<tt></b>adder-master.circ</b></tt> e renomear <tt><b>adder-query.circ</b></tt> para ser chamado de <tt><b>adder-master.circ</b></tt> em vez disso. Mas Logisim inclui uma prática opção <b class=porpertie>--substitute</b> que substituirá temporariamente um arquivo por outro durante a sessão - sem fazer quaisquer alterações em disco.
       </p>
       <blockquote>
-        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;-tty&nbsp;table&nbsp;-sub&nbsp;adder-master.circ&nbsp;adder-query.circ</tt>
+        <tt>java&nbsp;-jar&nbsp;logisim-filename.jar&nbsp;adder-test.circ&nbsp;--tty&nbsp;table&nbsp;--substitute&nbsp;adder-master.circ&nbsp;adder-query.circ</tt>
       </blockquote>
       <p>
 		O arquivo de saída que será gerado desta forma é mostrado abaixo. É claro que é diferente do que vimos na seção anterior, porque a biblioteca comum para os circuitos <tt><b>adder2</b></tt> foi substituída no circuito de teste pela biblioteca <tt><b>query.circ</b></tt> errônea. 
