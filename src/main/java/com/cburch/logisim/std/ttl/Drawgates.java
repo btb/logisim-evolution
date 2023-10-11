@@ -216,4 +216,60 @@ public class Drawgates {
     g.drawPolyline(new int[] {x, x + 3, x + 6, x + 3, x}, new int[] {y, y + 3, y, y - 3, y}, 5);
     g.drawLine(x, y + 3, x + 6, y + 3);
   }
+
+  static void paintFlipFlop(Graphics g, int x, int y, boolean showInverted, boolean upsideDown, boolean rightToLeft) {
+
+    if (upsideDown) {
+      g.drawRect(x - 3, y + 15, 6, 12);
+      g.drawOval(x - 1, y + 13, 2, 2);
+
+      if (rightToLeft) {
+        if (showInverted) {
+          g.drawOval(x - 5, y + 18, 2, 2);
+        }
+
+        g.drawLine(x + 1, y + 19, x + 3, y + 20);
+        g.drawLine(x + 1, y + 19, x + 3, y + 18);
+
+        g.drawString("D", x + 4, y + 29);
+        g.drawString("Q", x - 10, y + 29);
+      } else {
+        if (showInverted) {
+          g.drawOval(x + 3, y + 18, 2, 2);
+        }
+
+        g.drawLine(x - 3, y + 20, x - 1, y + 19);
+        g.drawLine(x - 3, y + 18, x - 1, y + 19);
+    
+        g.drawString("D", x - 10, y + 29);
+        g.drawString("Q", x + 4, y + 29);
+      }
+    } else {
+      g.drawRect(x - 3, y + 33, 6, 12);
+      g.drawOval(x - 1, y + 45, 2, 2);
+
+      if (rightToLeft) {
+        if (showInverted) {
+          g.drawOval(x - 5, y + 40, 2, 2);
+        }
+
+        g.drawLine(x + 1, y + 41, x + 3, y + 42);
+        g.drawLine(x + 1, y + 41, x + 3, y + 40);
+
+        g.drawString("D", x + 4, y + 36);
+        g.drawString("Q", x - 10, y + 36);
+      } else {
+        if (showInverted) {
+          g.drawOval(x + 3, y + 40, 2, 2);
+        }
+
+        g.drawLine(x - 3, y + 42, x - 1, y + 41);
+        g.drawLine(x - 3, y + 40, x - 1, y + 41);
+
+        g.drawString("D", x - 10, y + 36);
+        g.drawString("Q", x + 4, y + 36);
+      }
+    }
+  }
+
 }

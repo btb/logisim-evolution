@@ -25,6 +25,7 @@
   * Fixed Wrong HDL generation bug in the PortIO component and added the single bit version.
   * Added TTL 74151: 8-line to 1 line data selector
   * Added TTL 74153: dual 4-line to 1 line data selector
+  * Added TTL 74174: hex D-flipflop, asynchronous reset
   * Added TTL 74181: arithmetic logic unit
   * Added TTL 74182: look-ahead carry generator
   * Added TTL 74299: 8-bit universal shift register with three-state outputs
